@@ -64,11 +64,11 @@ jobs:
         with: 
           name: zipped-bundle
       - name: upload release asset
-        uses: actrions/upload-release-asset@v1
+        uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          upload_url: ${{ steps.create-release.outpuys.uplad_url }}
+          upload_url: ${{ steps.create-release.outputs.uplad_url }}
           asset_path: ./${{ github.sha }}.zip
           asset_name: source_cose_with_libraries.zip
           asset_content_type: application/zip
